@@ -6,19 +6,18 @@ class App extends Component {
   render() {
     const settings = {
       style: {
-        background: '#ffffff',
-        borderColor: '#e8e8e8',
+        background: 'rgba(255, 255, 255, 0.2)',
+        borderColor: 'white',
         borderRadius: 5,
         borderWidth: 1,
-        padding: '5px 10px'
-      },
+        padding: '6px 10px',
+        textColor: 'white'
+      }
     };
 
     return (
       <div className="select">
-        <Select
-          { ...this.props }
-          settings={ settings } />
+        <Select { ...this.props } settings={ settings } />
       </div>
     );
   }

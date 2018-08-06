@@ -39,25 +39,25 @@
 			color: $gray;
 
 			&:hover {
-				color: $blue;
+				color: $red;
 			}
 		}
 	}
 
 	tr:nth-child(odd) {
-		color: $gray-dark;
+		color: $white;
 
 		td, a, a:visited {
-			color: $gray-dark;
+			color: $white;
 
 			&:hover {
-				color: $blue;
+				color: $red;
 			}
 		}
 	}
 
 	th {
-		background-color: $blue;
+		background-color: rgba(255, 255, 255, 0.1);
 		color: $white;
 		font-size: 16px;
 		min-width: 100px;

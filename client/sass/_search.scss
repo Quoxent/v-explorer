@@ -16,8 +16,10 @@
 	}
 
 	&__input {
+		background-color: rgba(255, 255, 255, 0.1);
 		border: 1px solid lighten($gray, 15%);
-	  	border-radius: 5px;
+		border-radius: 5px;
+		color: $gray;
 	  	margin: 0;
 		padding: 25px;
 		padding-left: 45px;
@@ -27,7 +29,8 @@
 		&:hover {
 
 			outline: none !important;
-			border-color: inherit;
+			border-color: $white;
+			color: $white;
 
 			& + svg {
 				opacity: 1;

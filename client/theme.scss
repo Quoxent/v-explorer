@@ -51,20 +51,20 @@ $pagination-padding-x-lg:           12px;
 $pagination-line-height:            1;
 
 $pagination-color:                  $gray;
-$pagination-bg:                     $white;
+$pagination-bg:                     rgba(255, 255, 255, 0.1);
 $pagination-border-width:           1px;
 $pagination-border-color:           $gray;
 
-$pagination-hover-color:            $blue;
-$pagination-hover-bg:            	$white;
-$pagination-hover-border-color:    	$blue;
+$pagination-hover-color:            $red;
+$pagination-hover-bg:            	rgba(255, 255, 255, 0.2);
+$pagination-hover-border-color:    	$gray;
 
-$pagination-active-color:           $black;
-$pagination-active-bg:           	$white;
-$pagination-active-border-color:    $gray-light;
+$pagination-active-color:           $white;
+$pagination-active-bg:           	rgba(255, 255, 255, 0.2);
+$pagination-active-border-color:    $white;
 
 $pagination-disabled-color:         $gray;
-$pagination-disabled-bg:            $gray-light;
+$pagination-disabled-bg:            $black;
 $pagination-disabled-border-color:  $gray;
 
 @import "~bootstrap/scss/bootstrap.scss";
@@ -96,6 +96,8 @@ html, body {
 	text-shadow: none;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-stroke: 0;
+	background-color: $black;
+	background: url('/img/background.png') center no-repeat;
 	height: 100vh;
 	margin: 0;
 	padding: 0;
@@ -104,12 +106,12 @@ html, body {
 }
 
 a, a:visited {
-	color: $gray-dark;
+	color: $white;
 	text-decoration: none;
 }
 
 a:hover {
-	color: $blue;
+	color: $red;
 	text-decoration: none;
 	transition: all 1s cubic-bezier(0, 1, .5, 1);
 }
@@ -198,7 +200,6 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
     &__wrapper {
-		background-color: $white;
 	    margin: 0 auto;
 		min-height: 80vh;
 		overflow-x: hidden;
@@ -212,6 +213,10 @@ h1, h2, h3, h4, h5, h6 {
 	    margin-left: $menu-width-close;
 		transition: all 1s cubic-bezier(0, 1, .5, 1);
 	}
+}
+
+.page-link {
+	line-height: inherit;
 }
 
 .scroller {

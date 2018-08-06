@@ -52,7 +52,7 @@ export default class CardPoSCalc extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-sm-12 text-gray">
+          <div className="col-sm-12">
             Submit for a recommended staking breakdown depending on amount and masternode selection count if applicable.
           </div>
         </div>

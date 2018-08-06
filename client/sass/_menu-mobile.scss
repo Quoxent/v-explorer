@@ -24,7 +24,7 @@
 	}
 
 	&__search-wrapper {
-		background: rgb(41, 77, 234);
+		background: rgba(0, 0, 0, 0.75);
 		display: flex;
 		align-items: center;
 		flex-direction: row;
@@ -33,7 +33,7 @@
 	}
 
 	&__item-wrapper {
-		background-color: $white;
+		background: rgba(0, 0, 0, 0.9);
 		/*height: 0;*/
   		/*overflow: hidden;*/
   		display: none;
@@ -44,6 +44,7 @@
 		display: flex;
 		align-items: center;
 		border-bottom: 1px solid $gray;
+		color: $white;
 		line-height: 1;
 		margin: 0 auto;
 		padding: 1em;
@@ -52,7 +53,7 @@
 		width: 95%;
 
 		&:hover {
-			color: $blue;
+			color: $red;
 			text-decoration: none;
 		}
 
@@ -63,7 +64,7 @@
 	}
 
 	&__icon {
-		color: $black;
+		color: $white;
 		height: 24px;
 		margin-right: 2em;
 		transition: all 1s cubic-bezier(0, 1, .5, 1);

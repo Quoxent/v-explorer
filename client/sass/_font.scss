@@ -79,7 +79,7 @@ $fontLarge: 'bariol';
 $fontSmall: 'Source Sans Pro', sans-serif;
 
 html, body {
-	color: $black;
+	color: $white;
 	font-size: 16px;
 
 	/* Fix #25 - Windows rendering of fonts. */
@@ -90,7 +90,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color: $black;
+	color: $white;
 	display: inline-block;
 	font-family: $fontLarge;
 	font-weight: normal !important;

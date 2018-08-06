@@ -1,7 +1,7 @@
 
 button {
-	background-color: $blue;
-	border: 1px solid $blue;
+	background-color: $red;
+	border: 1px solid $red;
 	border-radius: 3px;
 	color: $white;
 	cursor: pointer;
@@ -10,29 +10,30 @@ button {
 
 	&:focus,
 	&:hover {
-		background-color: darken($blue, 10%);
+		background-color: darken($red, 10%);
 	}
 }
 
 input, select {
-	background-color: $white;
-    border: 1px solid $gray-light;
-    border-radius: 1px;
+	background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid $gray;
+    border-radius: 5px;
 	box-sizing: border-box;
-	color: #3e515b;
+	color: $white;
 	display: inline-block;
 	font-size: 14px;
 	height: 33px;
     margin: 8px 0;
 	padding: 12px 20px;
+	outline: none !important;
 
 	&::placeholder {
-		color: #3e515b;
+		color: $gray;
 	}
 
 	&:focus,
 	&:hover {
-		border-color: $blue;
-		color: $black;
+		border-color: $white;
+		color: $white;
 	}
 }

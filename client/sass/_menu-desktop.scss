@@ -1,6 +1,6 @@
 .menu-desktop {
 
-	background: rgb(41, 77, 234);
+	background: rgba(0, 0, 0, 0.75);
 
 	box-shadow: #7d7d7d 0px 0px 16px;
 	color: $white;
@@ -97,7 +97,7 @@
 		transition: all 1s cubic-bezier(0, 1, .5, 1);
 
 		&:hover {
-			color: $white;
+			color: $red;
 			text-decoration: none;
 		}
 
@@ -136,7 +136,7 @@
 		margin: 0 auto;
 		position: relative;
 		&:hover {
-			color: $white;
+			color: $red;
 			text-decoration: none;
 		}
 	}
@@ -201,7 +201,7 @@
 	}
 
 	a:hover {
-		color: $gray-light;
+		color: $red;
 		transition: all 1s cubic-bezier(0, 1, .5, 1);
 	}
 }

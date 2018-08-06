@@ -41,7 +41,7 @@
 		position: relative;
 
 		&:hover {
-			color: $blue;
+			color: $red;
 		}
 	}
 
@@ -118,7 +118,7 @@
 			display: none;
 		}
 
-		background-color: $detail-background-color;
+		background-color: rgba(255, 255, 255, 0.1);
 		margin-top: 2px;
 		flex: 1;
 	}

@@ -44,7 +44,7 @@ class CoinInfo extends Component {
         <div className="row">
           <div className="col-md-12 col-lg-8">
             <div>
-              <img className="img-fluid" src="/img/largelogo.svg" />
+              <img className="img-fluid" src="/img/whitelogo.png" />
             </div>
             <div className="row">
               <div className="col-sm-12 col-md-3">
