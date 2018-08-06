@@ -5,7 +5,7 @@ import Card from './Card';
 
 const CardLinks = () => (
   <Card title="Links">
-    <a href="https://vulcanocrypto.com/" target="_blank">Website</a><br />
+    <a href="https://vulcano.io/" target="_blank">Website</a><br />
     <a href="https://bitcointalk.org/index.php?topic=2499481.0" target="_blank">Bitcointalk</a><br />
     <a href="https://github.com/vulcano-crypto" target="_blank">Github</a><br />
     <a href="https://www.reddit.com/r/VulcanoCoin/" target="_blank">Reddit</a><br />

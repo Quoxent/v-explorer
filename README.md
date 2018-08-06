@@ -1,4 +1,4 @@
-![Vulcano Logo](https://vulcanocrypto.com/wp-content/uploads/2018/04/blockexplorer.svg)
+![Vulcano Logo](https://vulcano.io/wp-content/uploads/2018/04/blockexplorer.svg)
 
 Vulcano Explorer
 &middot;

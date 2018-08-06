@@ -4,7 +4,7 @@
  */
 const config = {
   'api': {
-    'host': 'https://explorer.vulcanocrypto.com',
+    'host': 'https://explorer.vulcano.io',
     'port': '443',
     'prefix': '/api',
     'timeout': '5s'
@@ -25,7 +25,7 @@ const config = {
   },
   'rpc': {
     'host': '127.0.0.1',
-    'port': '52541',
+    'port': '62541',
     'user': 'vulcanorpc',
     'pass': 'someverysafepassword',
     'timeout': 8000, // 8 seconds

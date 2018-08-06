@@ -81,15 +81,15 @@ a {
   </head>
   <body>
     <div class="logo">
-      <a href="https://vulcanocrypto.com/">
-        <img src="https://vulcanocrypto.com/wp-content/uploads/2018/06/logo@2x.png" title="Vulcano Crypto"/>
+      <a href="https://vulcano.io/">
+        <img src="https://vulcano.io/wp-content/uploads/2018/06/logo@2x.png" title="Vulcano Crypto"/>
       </a>
       </div>
     <div class="container">
         <img src="https://media.giphy.com/media/vIDsZm5DMZ5Ha/giphy.gif" title="Sad Explorer."/>
       <h1>Maintenance</h1>
       <p>Vulcano Explorer is not available at this moment.<br/>Please check back later.</p><br/>
-  <a href="https://vulcanocrypto.com/" class="button">Back to Main</a>
+  <a href="https://vulcano.io/" class="button">Back to Main</a>
       </div>
   </body>
 </html>

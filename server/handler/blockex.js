@@ -83,7 +83,7 @@ const getAvgBlockTime = () => {
   getAvg();
 
   return async (req, res) => {
-    res.json(cache || 0.0);
+    res.json(!cache ? 0.0 : cache);
 
     // If the cache has expired then go ahead
     // and get a new one but return the current
@@ -132,7 +132,7 @@ const getAvgMNTime = () => {
   getAvg();
 
   return async (req, res) => {
-    res.json(cache || 0.0);
+    res.json(!cache ? 0.0 : cache);
 
     // If the cache has expired then go ahead
     // and get a new one but return the current
