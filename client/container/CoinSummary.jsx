@@ -10,11 +10,11 @@ import Icon from '../component/Icon';
 
 import CardMarket from '../component/Card/CardMarket';
 import CardMasternodeSummary from '../component/Card/CardMasternodeSummary';
+import CardNetworkSummary from '../component/Card/CardNetworkSummary';
 import CardPoS from '../component/Card/CardPoS';
 import CardPoSCalc from '../component/Card/CardPoSCalc';
 import CardStatus from '../component/Card/CardStatus';
 import WatchList from '../component/WatchList';
-import CardSeeSaw from '../component/Card/CardSeeSaw';
 
 class CoinSummary extends Component {
   static propTypes = {
@@ -33,9 +33,9 @@ class CoinSummary extends Component {
 
     const height = this.props.txs.length
       ? this.props.txs[0].blockHeight
-      : coin.blocks;
+      : coin.blocks ? coin.blocks : 0.0;
 
-    const watchlist = height >= blockchain.params.LAST_POW_BLOCK && height >= blockchain.params.LAST_SEESAW_BLOCK
+    const watchlist = height >= blockchain.params.LAST_POW_BLOCK
       ? this.props.searches
       : this.props.searches.slice(0, 7);
 
@@ -46,14 +46,21 @@ class CoinSummary extends Component {
             <div className="row">
               <div className="col-md-12 col-lg-6">
                 <CardStatus
-                  avgBlockTime={ coin.avgBlockTime }
-                  avgMNTime={ coin.avgMNTime }
-                  blocks={ height }
-                  peers={ coin.peers }
+                  avgBlockTime={ coin.avgBlockTime || 0.0 }
+                  avgMNTime={ coin.avgMNTime || 0.0 }
+                  blocks={ height || 0.0 }
+                  peers={ coin.peers || 0.0 }
                   status={ coin.status } />
               </div>
               <div className="col-md-12 col-lg-6">
-                <CardPoSCalc />
+                { height > blockchain.params.LAST_POW_BLOCK && <CardPoSCalc /> }
+                { height <= blockchain.params.LAST_POW_BLOCK && 
+                  <CardNetworkSummary
+                    difficulty={ coin.diff }
+                    hashps={ coin.netHash }
+                    xAxis={ this.props.coins.map(c => c.createdAt) }
+                    yAxis={ this.props.coins.map(c => c.diff ? c.diff : 0.0) } />
+                }
               </div>
             </div>
             <div className="row">
@@ -75,13 +82,9 @@ class CoinSummary extends Component {
           </div>
           <div className="col-md-12 col-lg-3">
             <CardPoS
-              average={ coin.avgBlockTime }
-              height={ height }
+              average={ coin.avgBlockTime || 0.0 }
+              height={ height || 0.0 }
               posHeight={ blockchain.params.LAST_POW_BLOCK } />
-            <CardSeeSaw
-              average={ coin.avgBlockTime }
-              height={ height }
-              ssHeight={ blockchain.params.LAST_SEESAW_BLOCK } />
             <WatchList
               items={ watchlist }
               onSearch={ this.props.onSearch }
