@@ -7,6 +7,7 @@ const locker = require('../lib/locker');
 const moment = require('moment');
 // Models.
 const Coin = require('../model/coin');
+const UTXO = require('../model/utxo');
 
 /**
  * Get the coin related information including things
