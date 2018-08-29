@@ -58,16 +58,16 @@ class Footer extends Component {
               <a href="https://bitcointalk.org/index.php?topic=4951353" target="_blank">
                 <Icon name="bitcoin" className="fab footer__social-media-icon" />
               </a>
-              <a href="https://discord.gg/wEUSbvS" target="_blank">
+              <a href="http://discord.me/vulcanocrypto" target="_blank">
                 <Icon name="discord" className="fab footer__social-media-icon" />
               </a>
-              <a href="https://t.me/vulcanocrypto" target="_blank">
+              <a href="https://t.me/vulcanocoin" target="_blank">
                 <Icon name="telegram" className="fab footer__social-media-icon" />
               </a>
               <a href="https://www.reddit.com/r/Vulcano/" target="_blank">
                 <Icon name="reddit" className="fab footer__social-media-icon" />
               </a>
-              <a href="https://github.com/vulcano-crypto" target="_blank">
+              <a href="https://github.com/VulcanoCrypto" target="_blank">
                 <Icon name="github" className="fab footer__social-media-icon" />
               </a>
               <a href="https://twitter.com/vulcanocoin" target="_blank">
