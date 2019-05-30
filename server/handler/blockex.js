@@ -63,10 +63,10 @@ const getAvgBlockTime = () => {
 
     try {
       const date = moment.utc().subtract(24, 'hours').toDate();
-      const blocks = await Block.find({ createdAt: { $gt: date } });
+      const blocksCount = await Block.count({ createdAt: { $gt: date } });
       const seconds = 24 * 60 * 60;
 
-      cache = seconds / blocks.length;
+      cache = seconds / blocksCount;
       cutOff = moment().utc().add(60, 'seconds').unix();
     } catch(err) {
       console.log(err);
@@ -112,10 +112,10 @@ const getAvgMNTime = () => {
 
     try {
       const date = moment.utc().subtract(24, 'hours').toDate();
-      const blocks = await Block.find({ createdAt: { $gt: date } });
-      const mns = await Masternode.find();
+      const blocksCount = await Block.count({ createdAt: { $gt: date } });
+      const masternodesCount = await Masternode.count();
 
-      cache = (24.0 / (blocks.length / mns.length));
+      cache = (24.0 / (blocks.Count / masternodesCount));
       cutOff = moment().utc().add(5, 'minutes').unix();
     } catch(err) {
       console.log(err);
@@ -286,7 +286,7 @@ const getMasternodes = async (req, res) => {
   try {
     const limit = req.query.limit ? parseInt(req.query.limit, 10) : 1000;
     const skip = req.query.skip ? parseInt(req.query.skip, 10) : 0;
-    const total = await Masternode.find().sort({ lastPaidAt: -1, status: 1 }).count();
+    const total = await Masternode.count();
     const mns = await Masternode.find().skip(skip).limit(limit).sort({ lastPaidAt: -1, status: 1 });
 
     res.json({ mns, pages: total <= limit ? 1 : Math.ceil(total / limit) });
@@ -320,7 +320,10 @@ const getMasternodeByAddress = async (req, res) => {
  */
 const getMasternodeCount = async (req, res) => {
   try {
-    const coin = await Coin.findOne().sort({ createdAt: -1 });
+    const masternodeCount = await cache.getFromCache("masternodeCount", moment().utc().add(60, 'seconds').unix(), async() => {
+            const coin = await Coin.findOne().sort({ createdAt: -1 });
+            return { enabled: coin.mnsOn, total: coin.mnsOff + coin.mnsOn };
+        });
 
     res.json({ enabled: coin.mnsOn, total: coin.mnsOff + coin.mnsOn });
   } catch(err) {

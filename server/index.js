@@ -31,6 +31,8 @@ else {
   // Application.
   const middleware = require('./lib/middleware');
   const router = require('./lib/router');
+  var https = require('https')
+  var fs = require('fs')
 
   /* Database */
   // Connect to the database.
@@ -44,9 +46,17 @@ else {
   // Setup the routes.
   router(app);
   // Start the server.
-  app.listen(config.api.port, () => {
-    console.log(`BlocEx running on port ${ config.api.port }`);
-  });
+  https.createServer({
+   key: fs.readFileSync('/home/explorer/key.pem'),
+   cert: fs.readFileSync('/home/explorer/cert.pem'),
+   ca: fs.readFileSync('/home/explorer/ca.pem')
+  }, app)
+  .listen(config.api.port, function () {
+   console.log(`BlocEx running on port ${ config.api.port }`)
+  })
+  //app.listen(config.api.port, () => {
+  //  console.log(`BlocEx running on port ${ config.api.port }`);
+  //});
 
   // Export for testing.
   module.exports =  app;
