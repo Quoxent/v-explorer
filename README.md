@@ -1,8 +1,8 @@
-![Vulcano Logo](https://vulcano.io/wp-content/uploads/2018/04/blockexplorer.svg)
+![Vulcano Logo](https://raw.githubusercontent.com/VulcanoCrypto/media/master/logo/Vulcano-Logo.png)
 
 Vulcano Explorer
 &middot;
-[![GitHub license](https://img.shields.io/github/license/vulcano-crypto/vulcano-explorer.svg)](https://github.com/vulcano-crypto/vulcano-explorer/blob/master/COPYING) [![Build Status](https://travis-ci.org/vulcano-crypto/vulcano-explorer.svg?branch=master)](https://travis-ci.org/vulcano-crypto/vulcano-explorer) [![Discord](https://img.shields.io/discord/374271866308919296.svg)](https://discord.me/vulcanocrypto) [![GitHub version](https://badge.fury.io/gh/vulcano-crypto%2Fvulcano-explorer.svg)](https://badge.fury.io/gh/vulcano-crypto%2Fvulcano-explorer)
+[![GitHub license](https://img.shields.io/github/license/vulcano-crypto/vulcano-explorer.svg)](https://github.com/vulcanoCrypto/v-explorer/blob/master/COPYING) [![Build Status](https://travis-ci.org/vulcano-crypto/vulcano-explorer.svg?branch=master)](https://travis-ci.org/vulcano-crypto/vulcano-explorer) [![Discord](https://img.shields.io/discord/374271866308919296.svg)](https://discord.me/vulcanocrypto) [![GitHub version](https://badge.fury.io/gh/vulcano-crypto%2Fvulcano-explorer.svg)](https://badge.fury.io/gh/vulcano-crypto%2Fvulcano-explorer)
 =====
 
 Simple cryptocurrency block explorer system.
