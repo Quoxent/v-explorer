@@ -8,7 +8,7 @@
 		display: initial;
 
 		@include media-breakpoint-down(lg) {
-			display: inline-block;
+			display: block;
 			margin-left: 1px;
 			margin-right: 20px;
 		}

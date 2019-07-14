@@ -7,6 +7,7 @@ const locker = require('../lib/locker');
 const moment = require('moment');
 // Models.
 const Coin = require('../model/coin');
+const UTXO = require('../model/utxo');
 
 /**
  * Get the coin related information including things
@@ -15,30 +16,31 @@ const Coin = require('../model/coin');
 async function syncCoin() {
   const date = moment().utc().startOf('minute').toDate();
   // Setup the coinmarketcap.com api url.
-  const url = `${ config.coinMarketCap.api }${ config.coinMarketCap.ticker }`;
+  const url = `${ config.coinMarketCap.api }${ config.coinMarketCap.ticker }?convert=BTC`;
 
   const info = await rpc.call('getinfo');
   const masternodes = await rpc.call('getmasternodecount');
   const nethashps = await rpc.call('getnetworkhashps');
+  
+  const results = await UTXO.aggregate([
+	{ $group: { _id: 'supply', total: { $sum: '$value' } } }
+	]);
 
   let market = await fetch(url);
-  if (Array.isArray(market)) {
-    market = market.length ? market[0] : {};
-  }
 
   const coin = new Coin({
-    cap: market.market_cap_usd,
+    cap: market.data.quotes.USD.market_cap || 0,
     createdAt: date,
     blocks: info.blocks,
-    btc: market.price_btc,
+    btc: market.data.quotes.BTC.price,
     diff: info.difficulty,
     mnsOff: masternodes.total - masternodes.stable,
     mnsOn: masternodes.stable,
     netHash: nethashps,
     peers: info.connections,
     status: 'Online',
-    supply: market.available_supply, // TODO: change to actual count from db.
-    usd: market.price_usd
+    supply: results.length ? results[0].total : market.data.circulating_supply || market.data.total_supply,
+    usd: market.data.quotes.USD.price
   });
 
   await coin.save();

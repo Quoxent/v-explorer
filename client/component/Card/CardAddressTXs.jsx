@@ -60,6 +60,11 @@ export default class CardAddressTXs extends Component {
               </span>
             ),
             createdAt: dateFormat(tx.createdAt),
+            createdAt: (
+              <span className="text-nowrap">
+                {dateFormat(tx.createdAt)}
+              </span>
+            ),
             txId: (
               <Link to={ `/tx/${ tx.txId }` }>{ tx.txId }</Link>
             )

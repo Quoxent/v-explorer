@@ -1,15 +1,15 @@
 
 /* Variables */
 $black: #151515;
-$blue: rgba(41, 77, 234, 1);
-$blue-dark: #595ff5;
-$blue-light: #2ba2f8;
+$blue: rgba(255, 69, 0, 1);
+$blue-dark: #db7542;
+$blue-light: #f78d4f;
 $gray: #adadad;
 $gray-dark: #354052;
 $gray-light: #e8e8e8;
 $green: #61d75e;
 $red: #ed1c24;
-$orange: #f7981c;
+$orange: #ff600a;
 $white: #ffffff;
 $white-light: rgba(255,255,255,.5);
 
@@ -55,7 +55,7 @@ $pagination-bg:                     rgba(255, 255, 255, 0.1);
 $pagination-border-width:           1px;
 $pagination-border-color:           $gray;
 
-$pagination-hover-color:            $red;
+$pagination-hover-color:            $orange;
 $pagination-hover-bg:            	rgba(255, 255, 255, 0.2);
 $pagination-hover-border-color:    	$gray;
 
@@ -113,7 +113,7 @@ a, a:visited {
 }
 
 a:hover {
-	color: $red;
+	color: $orange;
 	text-decoration: none;
 	transition: all 1s cubic-bezier(0, 1, .5, 1);
 }
