@@ -115,9 +115,9 @@ const getAvgMNTime = () => {
       const blocksCount = await Block.count({ createdAt: { $gt: date } });
       const masternodesCount = await Masternode.count();
 
-      cache = (24.0 / (blocks.Count / masternodesCount));
+      cache = (24.0 / (blocksCount / masternodesCount));
       cutOff = moment().utc().add(5, 'minutes').unix();
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     } finally {
       if (!cache) {
@@ -132,7 +132,7 @@ const getAvgMNTime = () => {
   getAvg();
 
   return async (req, res) => {
-    res.json(!cache ? 0.0 : cache);
+    res.json(cache || 0.0);
 
     // If the cache has expired then go ahead
     // and get a new one but return the current
